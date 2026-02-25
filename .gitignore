@@ -3,4 +3,5 @@ node_modules
 server.log
 .env
 
-publishProfile.xml
+publishProfile.xmlalex.PublishSettings
+*.PublishSettings
