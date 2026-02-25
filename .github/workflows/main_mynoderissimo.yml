@@ -48,18 +48,11 @@ jobs:
         with:
           name: node-app
       
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_36D4FCA0D44242A1BB3AC2C002187E3E }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C53AACE3FC5848FFBF1E08375F544630 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_783DDF21F65547D98A775C5D5B709D52 }}
-
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'mynoderissimo'
-          slot-name: 'Production'
+          app-name: 'alex'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
           
